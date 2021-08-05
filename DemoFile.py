@@ -39,6 +39,35 @@ f.seek(0)
 print("---한줄씩 처리---")
 print( f.readline(), end="") 
 print( f.readline(), end="") 
+#리스트로 받기
+f.seek(0)
+lst = f.readlines()
+print(lst)
+f.close()
+
+#다중의 데이터에 맵핑하는 함수 
+def add10(x):
+    return x+10 
+
+lst = [1,2,3]
+for i in map(add10, lst):
+    print(i)
+
+
+#급속냉동과 해동 
+import pickle
+
+colors = ["red","blue","green"]
+f = open("c:\\work\\colors", "wb")
+pickle.dump(colors, f)
+f.close()
+del colors 
+
+#다시 복구 
+f = open("c:\\work\\colors", "rb")
+colors = pickle.load(f)
+print(colors)
+f.close() 
 
 
 
