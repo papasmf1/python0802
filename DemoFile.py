@@ -23,7 +23,22 @@ print("{0:e}".format(4/3))
 print("{0:f}".format(4/3))
 print("{0:.2f}".format(4/3))
 
+#파일에 읽기, 쓰기
+f = open("c:\\work\\demo.txt", "wt")
+f.write("첫번째라인\n두번째라인\nabcd\n")
+f.close() 
 
+f = open("c:/work/demo.txt", "rt")
+#하나의 문자열 변수로 리턴
+result = f.read()
+#f.close()
+print( result )
+print("---현재 위치---")
+print( f.tell() )
+f.seek(0)
+print("---한줄씩 처리---")
+print( f.readline(), end="") 
+print( f.readline(), end="") 
 
 
 
